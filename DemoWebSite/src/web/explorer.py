@@ -13,4 +13,4 @@ def get_all() -> List[Explorer]:
 
 @router.get("/{name}")
 def get_one(name: str) -> Explorer | None:
-    return service.get_one(name)
+    return service.get(name)

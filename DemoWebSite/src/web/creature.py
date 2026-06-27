@@ -13,4 +13,4 @@ def get_all() -> List[Creature]:
 
 @router.get("/{name}")
 def get_one(name: str) -> Creature | None:
-    return service.get_one(name)
+    return service.get(name)

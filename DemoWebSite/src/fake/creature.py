@@ -24,7 +24,7 @@ def get_all() -> List[Creature]:
     return _creatures
 
 
-def get_one(name: str) -> Creature | None:
+def get(name: str) -> Creature | None:
 
     for _creature in _creatures:
         if _creature.name == name:
