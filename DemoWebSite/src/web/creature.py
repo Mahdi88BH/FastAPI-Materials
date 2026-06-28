@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-import fake.creature as service
+import service.creature as service
 from model.creature import Creature
 from typing import List
 
@@ -13,4 +13,9 @@ def get_all() -> List[Creature]:
 
 @router.get("/{name}")
 def get_one(name: str) -> Creature | None:
-    return service.get(name)
+    return service.get_one(name)
+
+
+@router.post("/")
+def create(creature: Creature):
+    return service.create(creature)

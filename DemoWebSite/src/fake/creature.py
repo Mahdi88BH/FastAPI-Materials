@@ -18,6 +18,9 @@ _creatures = [
 ]
 
 
+def create(creature: Creature) -> Creature:
+    return creature
+
 def get_all() -> List[Creature]:
     """return all Creatures"""
 
