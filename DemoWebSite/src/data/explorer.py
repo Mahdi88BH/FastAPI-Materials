@@ -3,6 +3,7 @@ from model.explorer import Explorer
 from typing import List
 from error import Missing, Duplicate
 
+
 curs.execute("""create table if not exists explorer(
             name text primary key,
             country text,
@@ -50,6 +51,7 @@ def create(explorer: Explorer) -> Explorer:
 
     return get_one(explorer.name)
 
+
 def modify(name: str, explorer: Explorer) -> Explorer:
     if not (name and explorer): return None
     qry = """update explorer
@@ -65,7 +67,6 @@ def modify(name: str, explorer: Explorer) -> Explorer:
         return get_one(explorer.name)
     else:
         raise Missing(msg=f"Explorer {name} not found")
-
 
 
 def delete(name: str):

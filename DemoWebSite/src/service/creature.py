@@ -6,9 +6,18 @@ from typing import List, Optional
 def create(creature: Creature) -> Creature:
     return data.create(creature)
 
+
 def get_all() -> List[Creature]:
     return data.get_all()
 
 
 def get_one(name: str) -> Optional[Creature]:
     return data.get_one(name)
+
+
+def modify(name: str, creature: Creature) -> Creature:
+    return data.modify(name, creature)
+
+
+def delete(name: str):
+    return data.delete(name)
