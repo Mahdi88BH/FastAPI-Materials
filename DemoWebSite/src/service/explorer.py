@@ -11,3 +11,9 @@ def get_all() -> List[Explorer]:
 
 def get_one(name: str) -> Optional[Explorer]:
     return data.get_one(name)
+
+def modify(name: str, explorer: Explorer) -> Explorer:
+    return data.modify(name, explorer)
+
+def delete(name: str):
+    return data.delete(name)
