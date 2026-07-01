@@ -11,12 +11,17 @@ _explorers = [
 ]
 
 
+def create(explorer: Explorer) -> Explorer:
+    return explorer
+
+
 def get_all() -> List[Explorer]:
     """return all explorers"""
 
     return _explorers
 
-def get(name: str) -> Explorer | None:
+
+def get_one(name: str) -> Explorer | None:
     """return a specific explorer"""
 
     for _explorer in _explorers:

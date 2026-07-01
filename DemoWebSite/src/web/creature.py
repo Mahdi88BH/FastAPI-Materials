@@ -1,5 +1,10 @@
+import os
 from fastapi import APIRouter, status, HTTPException
-import service.creature as service
+# if os.getenv["CRYPTID_UNIT_TEST"]:
+#     from fake import creature as service
+# else:
+#     from service import creature as service
+from service import creature as service
 from model.creature import Creature
 from typing import List
 from error import Duplicate, Missing

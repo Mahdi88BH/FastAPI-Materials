@@ -1,5 +1,10 @@
+import os
 from model.creature import Creature
-import data.creature as data
+# if os.getenv["CRYPTID_UNIT_TEST"]:
+#     from fake import creature as data
+# else:
+#     from data import creature as data
+from data import creature as data
 from typing import List, Optional
 
 

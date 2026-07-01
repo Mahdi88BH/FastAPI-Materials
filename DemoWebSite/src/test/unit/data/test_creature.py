@@ -5,7 +5,7 @@ from error import Duplicate, Missing
 
 # set this before data imports below for data.init
 os.environ["CRYPTID_SQLITE_DB"] = ":memory:"
-from src.data import creature
+from data import creature
 
 
 @pytest.fixture
@@ -34,22 +34,22 @@ def test_get_one_missing(sample):
         _ = creature.get_one("boxturtle")
 
 def test_modify(sample):
+    creature.country = "JP" # Japan!
     resp = creature.modify(sample.name, sample)
     assert resp == sample
 
+
 def test_modify_missing():
-    thing: Creature = Creature(
-        name="snurfle", 
-        country="RU", 
-        area="", 
-        description="some thing", 
-        aka="")
+    thing: Creature = Creature(name="snurfle",
+    description="some thing", country="somewhere")
     with pytest.raises(Missing):
         _ = creature.modify(thing.name, thing)
+
 
 def test_delete(sample):
     resp = creature.delete(sample.name)
     assert resp is None
+
 
 def test_delete_missing(sample):
     with pytest.raises(Missing):
