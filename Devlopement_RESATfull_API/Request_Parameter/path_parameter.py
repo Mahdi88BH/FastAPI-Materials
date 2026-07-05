@@ -11,7 +11,7 @@ app = FastAPI()
 
 
 @app.get('/users/{role}/{id}')
-def get_user(role: usetType, id: int = Path(..., gt=1)) -> dict:
+async def get_user(role: usetType, id: int = Path(..., gt=1)) -> dict:
     return {"retrive": {
         'id': id,
         "role": role,

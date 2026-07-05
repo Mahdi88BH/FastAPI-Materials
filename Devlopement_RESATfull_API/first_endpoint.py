@@ -4,6 +4,6 @@ from fastapi import FastAPI
 app = FastAPI()
 
 @app.get('/')
-def gretting() -> dict:
+async def gretting() -> dict:
     return {"Hello": "Maroc"}
 
