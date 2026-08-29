@@ -46,6 +46,29 @@ class User(BaseModel):
     website: HttpUrl
 
 
+# Model Inheritance
+class PostBase(BaseModel):
+    title: str
+    content: str
+
+
+class PostCreate(PostBase):
+    title: str
+    content: str
+
+    def excerpt(self) -> str:
+        return f"{self.content[:140]}..."
+
+
+class PostRead(PostBase):
+    id: int
+
+
+class Post(PostBase):
+    id: int
+    nb_views: int = 0
+
+
 if __name__ == "__main__":
 
     # Invalide Instantiation
