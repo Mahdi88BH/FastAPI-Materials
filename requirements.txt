@@ -6,3 +6,4 @@ requests
 email-validator
 sqlalchemy[asyncio,mypy]
 aiosqlite
+alembic
