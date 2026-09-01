@@ -53,8 +53,8 @@ class PostBase(BaseModel):
 
 
 class PostCreate(PostBase):
-    title: str
-    content: str
+    # title: str
+    # content: str
 
     def excerpt(self) -> str:
         return f"{self.content[:140]}..."

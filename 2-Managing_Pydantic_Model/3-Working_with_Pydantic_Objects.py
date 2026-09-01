@@ -81,7 +81,7 @@ if __name__ == "__main__":
     person_exclude = person.model_dump(exclude={"birthdate", "interests"})
     print(person_exclude)
 
-    person_nested_include = person.dict( include={
+    person_nested_include = person.model_dump( include={
         "first_name": ...,
         "last_name": ...,
         "address": {"city", "country"},
