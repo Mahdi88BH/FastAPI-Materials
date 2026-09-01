@@ -3,7 +3,7 @@ from fastapi import Header, FastAPI, Depends, HTTPException, status, APIRouter
 
 
 
-def secret_header(secret_header: str | None = Header(None)) -> None:
+async def secret_header(secret_header: str | None = Header(None)) -> None:
     if not secret_header or secret_header != "SECRET_VALUE":
         raise HTTPException(status.HTTP_403_FORBIDDEN)
 

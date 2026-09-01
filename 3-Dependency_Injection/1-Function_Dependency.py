@@ -46,7 +46,7 @@ async def list_things(p: tuple[int, int] = Depends(pagination)):
 
 # @app.patch("/posts/{id}")
 # async def update(post_update: PostUpdate, post: Post = Depends(get_post_or_404)):
-#     updated_post = post.copy(update=post_update.dict())
+#     updated_post = post.copy(update=post_update.model_dump())
 #     db.posts[post.id] = updated_post
 #     return updated_post
 
